@@ -5,11 +5,10 @@
 
 #include "../Matrix.h"
 #include "gtest/gtest.h"
-
-class MatrixMoc: public Matrix, public ::testing::Test {
+class MatrixMoc: public Matrix<3>, public ::testing::Test {
 public:
 	MatrixMoc() :
-	Matrix()
+    Matrix<3>()
 	{
 	}
 
@@ -47,16 +46,6 @@ TEST_F(MatrixMoc, addItemTest)
     EXPECT_EQ(getItem(indexFrame, 2, 1), Number(indexFrame, 400));
     indexFrame = 3;
     EXPECT_EQ(getItem(indexFrame, 2, 2), Number(indexFrame, 500));
-//    EXPECT_EQ(getMatrix(indexFrame)[0][1], Number(indexFrame, 4));
-//    indexFrame = 3;
-//    EXPECT_EQ(getMatrix(indexFrame)[0][1], Number(indexFrame, 5));
-
-
-//	EXPECT_EQ(q.size(), 8);
-//	Matrix::Number expectValue = Number{ 1, 1 };
-//	Matrix::Number currentValue = q[1][1];
-//
-//	EXPECT_EQ(currentValue, expectValue);
 }
 
 

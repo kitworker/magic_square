@@ -8,6 +8,7 @@
  * одномерные Массивы как регулярные структуры
  * А поля структур как стек (объемный 3d!) массива
  */
+template <int DIM>
 class Matrix
 {
 public:
@@ -29,9 +30,8 @@ public:
         }
     };
 
-    //	using Mag8 = std::array<int>; // int[8][8];
-    //const int DIM = 2;
-    using MagX = std::array<std::array<Number, 2>, 2>;
+    using MagX = std::array<std::array<Number, DIM>, DIM>;
+
 public:
     Matrix();
 
